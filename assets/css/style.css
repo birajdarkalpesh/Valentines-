@@ -1,33 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, #ff6f91, #ffb6c1);
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Comic Sans MS', cursive;
-    overflow: hidden;
+    padding: 15px;
 }
 
 .card {
     background: #fff;
-    padding: 35px 45px;
-    border-radius: 30px;
+    width: 100%;
+    max-width: 380px;
+    padding: 25px 20px;
+    border-radius: 25px;
     text-align: center;
     box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    color: #ff3366;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 
 .names {
-    font-size: 22px;
+    font-size: 1.2rem;
     color: #ff4d6d;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
 }
 
 button {
-    margin-top: 20px;
-    padding: 12px 28px;
-    border-radius: 30px;
+    margin-top: 18px;
+    padding: 12px 22px;
+    font-size: 1rem;
     border: none;
+    border-radius: 30px;
     background: #ff3366;
     color: white;
     cursor: pointer;
+    width: 100%;
+    max-width: 220px;
+}
+
+button:hover {
+    background: #ff1e4d;
+}
+
+.heart {
+    position: absolute;
+    font-size: 18px;
+    color: #ff3366;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
 }
